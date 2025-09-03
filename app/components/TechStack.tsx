@@ -7,8 +7,8 @@ import { gsap } from 'gsap';
 import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Send } from 'lucide-react';
-import Confetti from './Confetti';
 import ConfettiBurst from './Confetti';
+import { contactSchema } from '../lib/zod';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -45,6 +45,14 @@ const TechStack = () => {
     email: '',
     subject : ''
   })
+  const [zodErrors, setZodErrors] = useState({
+    message : '',
+    email : '',
+    subject : ''
+  })
+
+  const [ contactResponse, setContactResponse ] = useState('')
+
   const [shouldFireConfetti, setShouldFireConfetti] = useState(false)
 
   // let footerShown = false;
@@ -52,6 +60,7 @@ const TechStack = () => {
 
 
   useEffect(() => {
+    setContactResponse('')
     const startPhysics = () => {
     
       if (hasStarted.current) return;
@@ -279,10 +288,66 @@ const TechStack = () => {
 
   const handleNext = async () => {
     if (contactStep === 'message'){
+      const result = contactSchema.pick({message : true}).safeParse({
+        message : input.message
+      })
+      if (!result.success){
+        const err = result.error.issues.filter( i => i.path[0] === 'message')[0]?.message
+        setZodErrors( prev => ({
+          ...prev,
+          message : err || ''
+        }))
+        return 
+        
+      } else {
+        setZodErrors(prev => ({
+          ...prev,
+          message : ''
+        }))
+      }
+
       setContactStep('email')
     } else if (contactStep === 'email'){
+
+      const result = contactSchema.pick({email : true}).safeParse({
+        email : input.email
+      })
+
+      if (!result.success){
+        const err = result.error.issues.filter( i => i.path[0] === 'email')[0]?.message 
+        setZodErrors( prev => ({
+          ...prev,
+          email : err || ''
+        }))
+        return 
+      } else {
+        setZodErrors(prev => ({
+          ...prev,
+          email : ''
+        }))
+      }
+
       setContactStep('subject')
     } else if (contactStep === 'subject'){
+
+      const result = contactSchema.pick({subject : true}).safeParse({
+        subject : input.subject
+      })
+
+      if (!result.success){
+        const err = result.error.issues.filter( i => i.path[0] === 'subject')[0]?.message 
+        setZodErrors( prev => ({
+          ...prev,
+          subject : err || ''
+        }))
+        return 
+      } else {
+        setZodErrors(prev => ({
+          ...prev,
+          subject : ''
+        }))
+      }
+
       await handleFormSubmit()
     
       // setShouldFireConfetti(false)
@@ -304,6 +369,8 @@ const TechStack = () => {
       ...prev,
       [e.target.name] : e.target.value
   }))
+
+
   }
 
   const handleFormSubmit = async () => {
@@ -311,10 +378,9 @@ const TechStack = () => {
     
     const params = {
       from : input.email,
-      subject : input.subject ,
-      message : input.message
+      subject : input.subject.trim() ,
+      message : input.message.trim()
     }
-    console.log('PARAMS', params)
     try {
       const res = await fetch('/api/send', {
         method : 'POST',
@@ -325,9 +391,8 @@ const TechStack = () => {
       })
 
       const data = await res.json()
-      console.log('data back is ', data)
       if (res.ok){
-        console.log(data.message)
+        setContactResponse("I got your message, I'll try to respond as soon as I can, cheers!")
         setShouldFireConfetti(true)
         setHideForm(true)
         setInput({
@@ -338,10 +403,11 @@ const TechStack = () => {
         setContactStep('message')
       } else {
         console.log(data.message)
+        setContactResponse('Oops, something went wrong...')
       }
 
     } catch (err){
-      console.log('something went wrong')
+      console.log('something went wrong',err)
     }
   }
 
@@ -401,6 +467,9 @@ const TechStack = () => {
               </div>
             </div>
           </div>
+          { contactResponse && (
+            <p className='contact-response'>{contactResponse}</p>
+          ) }
 
           { !hideForm && (
             <div className='cta-right '>
@@ -408,18 +477,27 @@ const TechStack = () => {
 
                 { contactStep === 'message' ? (
                   <>
+                   { zodErrors.message && (
+                      <p className='zod-error'>{zodErrors.message}</p>
+                    ) }
                     <label htmlFor="message" className='form-label'>Message</label>
                     <textarea onChange={handleChange} value={input.message} style={{ width: isMobile ? 300 : 700  }}  name='message' className='message-input'  maxLength={500} placeholder='Say hello and whatever is on your mind'/>
                   </>
 
                 ) : contactStep === 'email' ? (
                   <>
+                    { zodErrors.email && (
+                      <p className='zod-error'>{zodErrors.email}</p>
+                    ) }
                     <label htmlFor="email" className='form-label'>Email</label>
                     <input onChange={handleChange} value={input.email}  type="email" name='email' className='email-input'  placeholder='johndoe@gmail.com' />
                   </>
 
                 ) : contactStep === 'subject' && (
                   <>
+                   { zodErrors.subject && (
+                      <p className='zod-error'>{zodErrors.subject}</p>
+                    ) }
                     <label htmlFor="subject" className='form-label'>Subject</label>
                     <input onChange={handleChange} value={input.subject} type="text" name='subject' className='subject-input'  placeholder='This email is about...' />
                   </>

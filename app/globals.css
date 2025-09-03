@@ -304,3 +304,10 @@ text {
 }
 
 
+.zod-error{
+  @apply text-sm font-heading text-red-400 font-medium
+}
+
+.contact-response{
+  @apply text-3xl font-heading font-bold text-white md:w-[300px] xl:w-[400px] xl:text-5xl
+}
