@@ -5,10 +5,18 @@ import { Physics2DPlugin } from 'gsap/Physics2DPlugin';
 
 gsap.registerPlugin(Physics2DPlugin);
 
+type Particle = {
+  x: number;
+  y: number;
+  rotation: number;
+  color: string;
+  size: number;
+};
+
 const ConfettiBurst = ( { shouldFire } : {shouldFire:boolean}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
-  const particles = useRef<any[]>([]);
+  const particles = useRef<Particle[]>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
