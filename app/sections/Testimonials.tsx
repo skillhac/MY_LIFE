@@ -62,7 +62,7 @@ const Testimonials = () => {
     }
 
   return (
-    <div className='testimonials  border-3 border-orange-400 '>
+    <div className='testimonials   '>
         <div className='testimonial-content-wrapper'>
             { testimonialData.map( (data, index) => (
                 <div key={index} className='single-testimonial-wrapper whitespace-pre-line'>
