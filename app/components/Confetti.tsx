@@ -13,7 +13,8 @@ type Particle = {
   size: number;
 };
 
-const ConfettiBurst = ( { shouldFire } : {shouldFire:boolean}) => {
+const ConfettiBurst = ( { shouldFire, className='' } : {shouldFire:boolean, className?:string}) => {
+  console.log('should fire from top', shouldFire)
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const particles = useRef<Particle[]>([]);
@@ -45,6 +46,7 @@ const ConfettiBurst = ( { shouldFire } : {shouldFire:boolean}) => {
     render();
 
     if (shouldFire){
+        console.log('should fire?', shouldFire)
         fireConfetti()
       }
   }, [shouldFire]);
@@ -83,11 +85,11 @@ const ConfettiBurst = ( { shouldFire } : {shouldFire:boolean}) => {
  
 
   return (
-    <div className='absolute top-0 left-0 w-dvw h-dvh'>
+    <div className=''>
       <canvas
         ref={canvasRef}
-        className='  '
-        style={{ position: 'fixed',  top: 0, left: 0, pointerEvents: 'none', zIndex: 999 }}
+        className='h-full w-full'
+        style={{ position: 'absolute',  top: 0, left: 0, pointerEvents: 'none', zIndex: 999,  }}
       />
       
     </div>

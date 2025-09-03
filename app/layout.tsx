@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Urbanist } from "next/font/google";
+
 import "./globals.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -15,6 +16,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const urbanist = Urbanist({
+  subsets: ['latin'],
+  weight: ['100','200','300','400','500','600','700','800','900'],
+  variable: '--font-heading', // <-- sets a CSS variable
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${urbanist.variable} antialiased`}
       >
         {children}
       </body>

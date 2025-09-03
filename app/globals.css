@@ -309,5 +309,5 @@ text {
 }
 
 .contact-response{
-  @apply text-3xl font-heading font-bold text-white md:w-[300px] xl:w-[400px] xl:text-5xl
+  @apply text-lg lg:text-3xl font-heading font-bold text-white md:w-[300px] xl:w-[400px] xl:text-5xl
 }

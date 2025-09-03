@@ -111,7 +111,7 @@ const TechStack = () => {
           left: 0;
           font-weight: bold;
           user-select: none;
-          z-index:30;
+          z-index:20;
         `;
         container.appendChild(el);
 
@@ -204,7 +204,7 @@ const TechStack = () => {
     
 
     const cleanupPhysics = () => {
-      console.log("CLEAN UP PHYSICS")
+      setShouldFireConfetti(false)
       footerStarted.current = false
       setShowUI(false)
       horizontalSpread.current = 0
@@ -343,8 +343,8 @@ const TechStack = () => {
       }
 
       await handleFormSubmit()
+
     
-      setShouldFireConfetti(false)
     }
   }
 
@@ -386,8 +386,8 @@ const TechStack = () => {
 
       const data = await res.json()
       if (res.ok){
-        setContactResponse("I got your message, I'll try to respond as soon as I can, cheers!")
         setShouldFireConfetti(true)
+        setContactResponse("I got your message, I'll try to respond as soon as I can, cheers!")
         setHideForm(true)
         setInput({
           message : '',
@@ -398,7 +398,8 @@ const TechStack = () => {
       } else {
         console.log(data.message)
         setContactResponse('Oops, something went wrong...')
-      }
+      } 
+
 
     } catch (err){
       console.log('something went wrong',err)
@@ -413,7 +414,7 @@ const TechStack = () => {
   return (
     <div className='footer-wrapper '>
 
-      <ConfettiBurst shouldFire={shouldFireConfetti}  />
+     
 
       <div
         ref={containerRef}
@@ -429,6 +430,7 @@ const TechStack = () => {
           overflow: 'hidden',
         }}
       >
+         <ConfettiBurst shouldFire={shouldFireConfetti}  className='w-dvw h-dvh' />
 
       </div>
 
