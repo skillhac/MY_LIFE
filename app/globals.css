@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import "tailwindcss";
-
-
 
 @property --angle {
   syntax: "<angle>";
@@ -16,7 +14,7 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  
+
   /* Neon Green, Gray, White, Black Theme */
   --color-neon-green: #00ff41;
   --color-gray: #808080;
@@ -24,20 +22,20 @@
   --color-black: #000000;
   --color-dark-gray: #333333;
   --color-light-gray: #cccccc;
-  
+
   /* Legacy color mappings for compatibility */
   --color-customBlue: var(--color-neon-green);
   --color-sand: var(--color-white);
   --color-customBlack: var(--color-black);
 }
 
-@theme{
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-paragraph: 'DM Sans', sans-serif;
+  --font-paragraph: "DM Sans", sans-serif;
   --font-heading: "Urbanist", sans-serif;
-  --font-bingeable: 'Geist';
-  
+  --font-bingeable: "Geist";
+
   /* Updated color theme */
   --color-primary: var(--color-neon-green);
   --color-secondary: var(--color-gray);
@@ -45,14 +43,13 @@
   --color-background-primary: var(--color-black);
   --color-text-primary: var(--color-white);
   --color-text-secondary: var(--color-gray);
-  
+
   /* Legacy colors updated to new theme */
   --color-demonicRed: var(--color-neon-green);
   --color-customBlack: var(--color-black);
   --color-sand: var(--color-white);
   --color-orange: var(--color-neon-green);
   --color-customBlue: var(--color-neon-green);
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -61,7 +58,6 @@
     --foreground: #ffffff;
   }
 }
-
 
 body {
   background: var(--background);
@@ -79,88 +75,71 @@ p {
 } */
 
 @layer components {
-
-  .hero-title{
-    @apply  font-bold text-4xl font-heading tracking-tighter w-[200px]
+  .hero-title {
+    @apply font-bold text-4xl font-heading tracking-tighter w-[200px];
   }
 
-  .bingeable-slider{
-    @apply w-dvw  flex-nowrap -z-10 ;
-
+  .bingeable-slider {
+    @apply w-dvw  flex-nowrap -z-10;
   }
-    
+
   .bingeable-element {
-    @apply w-dvw h-dvh -z-10 ; 
+    @apply w-dvw h-dvh -z-10;
   }
 
-
-
-  .intro-1{
-    @apply text-white   md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
+  .intro-1 {
+    @apply text-white   md:text-7xl text-5xl font-extrabold font-heading tracking-tighter;
   }
 
-  .intro-2{
-    @apply text-white md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
-  }
-  
-  .intro-3{
-    @apply text-white  md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
+  .intro-2 {
+    @apply text-white md:text-7xl text-5xl font-extrabold font-heading tracking-tighter;
   }
 
-  .msg-text-scroll{
-    @apply rotate-3 border-12 -m-3 border-black z-10   justify-self-center self-center  translate-x-20
-  }
-  
-  .vancouver-canada{
-    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-3 md:p-6 uppercase tracking-tighter text-black bg-white
+  .intro-3 {
+    @apply text-white  md:text-7xl text-5xl font-extrabold font-heading tracking-tighter;
   }
 
-  .impactful-container{
-    @apply rotate-3 border-12 -m-20 border-black z-10   justify-self-center self-center  translate-x-20  translate-y-[85px] md:translate-y-0
-
+  .msg-text-scroll {
+    @apply rotate-3 border-12 -m-3 border-black z-10   justify-self-center self-center  translate-x-20;
   }
 
-  .impactful{
-    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter text-black bg-white
-  }
-  .user-facing-container{
-    @apply -rotate-3 border-12  border-black z-10 -m-34  md:-m-16 justify-self-center self-center  translate-x-20 translate-y-[85px] md:translate-y-0
-
+  .vancouver-canada {
+    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-3 md:p-6 uppercase tracking-tighter text-black bg-white;
   }
 
-
-
-  .and{
-    @apply font-heading font-bold z-40 text-5xl p-6  text-white uppercase tracking-tighter mt-28 md:mt-6  border-black  drop-shadow-[0_0_10px_black]  justify-self-center self-center translate-y-20  md:translate-y-20
-
+  .impactful-container {
+    @apply rotate-3 border-12 -m-20 border-black z-10   justify-self-center self-center  translate-x-20  translate-y-[85px] md:translate-y-0;
   }
 
-  .user-facing{
-    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter text-black bg-white
-
+  .impactful {
+    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter text-black bg-white;
   }
-  
+  .user-facing-container {
+    @apply -rotate-3 border-12  border-black z-10 -m-34  md:-m-16 justify-self-center self-center  translate-x-20 translate-y-[85px] md:translate-y-0;
+  }
+
+  .and {
+    @apply font-heading font-bold z-40 text-5xl p-6  text-white uppercase tracking-tighter mt-28 md:mt-6  border-black  drop-shadow-[0_0_10px_black]  justify-self-center self-center translate-y-20  md:translate-y-20;
+  }
+
+  .user-facing {
+    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter text-black bg-white;
+  }
 }
 
-
-
-
-.challenge-problem{
-  @apply -rotate-2 bg-gray-800 text-white font-heading text-lg md:text-3xl px-6 py-10  font-bold w-full   md:w-[800px]  border-10 border-black  
+.challenge-problem {
+  @apply -rotate-2 bg-gray-800 text-white font-heading text-lg md:text-3xl px-6 py-10  font-bold w-full   md:w-[800px]  border-10 border-black;
 }
 
-.challenge-solution{
-  @apply rotate-1 bg-white text-black font-heading md:text-xl font-semibold w-full lg:w-[1000px] border-10 border-black md:absolute  md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 px-6 py-10 -mt-10 md:mt-0
+.challenge-solution {
+  @apply rotate-1 bg-white text-black font-heading md:text-xl font-semibold w-full lg:w-[1000px] border-10 border-black md:absolute  md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 px-6 py-10 -mt-10 md:mt-0;
 }
 
 @keyframes spin-border {
-  to{
-    --angle : 360deg;
+  to {
+    --angle: 360deg;
   }
 }
-
-
-
 
 #svg-stage {
   max-width: 600px;
@@ -189,141 +168,132 @@ text {
   stroke: var(--color-white);
 }
 
-
-.timeline-intro-wrapper{
-  @apply  w-dvw justify-center items-end flex overflow-hidden relative 
+.timeline-intro-wrapper {
+  @apply w-dvw justify-center items-end flex overflow-hidden relative;
 }
 
-
-
-.timeline-text{
-  @apply font-heading text-white invisible text-[7px] md:text-[10px] lg:text-xs w-[100px] md:w-[200px] lg:w-[280px]
+.timeline-text {
+  @apply font-heading text-white invisible text-[7px] md:text-[10px] lg:text-xs w-[100px] md:w-[200px] lg:w-[280px];
 }
 
-.timeline-pic{
-  @apply rounded-lg overflow-hidden border-2 md:border-5 border-black  scale-60 lg:scale-100
+.timeline-pic {
+  @apply rounded-lg overflow-hidden border-2 md:border-5 border-black  scale-60 lg:scale-100;
 }
 
 .logo-scroll-container {
-  @apply w-full justify-center items-center flex flex-row gap-5
+  @apply w-full justify-center items-center flex flex-row gap-5;
 }
 
-
-.testimonials{
-  @apply w-dvw   flex flex-col items-center justify-center gap-0 pb-[300px]
-  
+.testimonials {
+  @apply w-dvw   flex flex-col items-center justify-center gap-0 pb-[300px];
 }
 
-.testimonials-intro{
-  @apply w-dvw h-[120dvh] flex flex-col items-center justify-center gap-0 overflow-hidden
-  
+.testimonials-intro {
+  @apply w-dvw h-[120dvh] flex flex-col items-center justify-center gap-0 overflow-hidden;
 }
 
-
-
-.kind-words{
-  @apply uppercase text-[17.5vw] leading-[80%] tracking-tighter ml-[2vw] font-bold ;
+.kind-words {
+  @apply uppercase text-[17.5vw] leading-[80%] tracking-tighter ml-[2vw] font-bold;
 }
 
-.testimonial-content-wrapper{
-  @apply flex flex-col gap-30 w-full px-10 lg:px-20
+.testimonial-content-wrapper {
+  @apply flex flex-col gap-30 w-full px-10 lg:px-20;
 }
 
-.single-testimonial-wrapper{
-  @apply flex flex-col w-[78%] justify-start items-start gap-10
+.single-testimonial-wrapper {
+  @apply flex flex-col w-[78%] justify-start items-start gap-10;
 }
 
-.tech-logo{
-  @apply justify-center items-center opacity-60
+.tech-logo {
+  @apply justify-center items-center opacity-60;
 }
 
-.tech-plate{
-  @apply text-sm md:text-lg font-heading font-medium 
+.tech-plate {
+  @apply text-sm md:text-lg font-heading font-medium;
 }
 
-.footer-wrapper{
-  @apply w-dvw h-dvh flex relative flex-col 
+.footer-wrapper {
+  @apply w-dvw h-dvh flex relative flex-col;
 }
 
-.footer{
-  @apply w-dvw h-dvh relative flex flex-col
+.footer {
+  @apply w-dvw h-dvh relative flex flex-col;
 }
 
-.footer-content{
-  @apply flex flex-col gap-10 w-dvw h-dvh overflow-hidden absolute top-80 left-1/2  -translate-x-1/2 -translate-y-1/2  justify-center items-center 
+.footer-content {
+  @apply flex flex-col gap-10 w-dvw h-dvh overflow-hidden absolute top-80 left-1/2  -translate-x-1/2 -translate-y-1/2  justify-center items-center;
 }
 
-.confetti{
-  @apply flex flex-col gap-10 absolute top-0 left-1/2 transform -translate-x-1/2   justify-center items-center  w-dvw 
+.confetti {
+  @apply flex flex-col gap-10 absolute top-0 left-1/2 transform -translate-x-1/2   justify-center items-center  w-dvw;
 }
 
-.footer-text{
-  @apply  gap-5 flex flex-col  items-center justify-center px-8
+.footer-text {
+  @apply gap-5 flex flex-col  items-center justify-center px-8;
 }
 
-.footer-cta{
-  @apply pt-10 gap-10 flex flex-col w-dvw  px-20 lg:flex-row justify-center items-center translate-y-10 opacity-0 relative  
+.footer-cta {
+  @apply pt-10 gap-10 flex flex-col w-dvw  px-20 lg:flex-row justify-center items-center translate-y-10 opacity-0 relative;
 }
 
-.buttons{
-  @apply flex flex-col gap-2 
+.buttons {
+  @apply flex flex-col gap-2;
 }
 
-.send-button{
-  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[140px] gap-1 cursor-pointer text-black
+.send-button {
+  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[140px] gap-1 cursor-pointer text-black;
 }
-.gh-button{
-  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[120px] gap-1 cursor-pointer text-black
-}
-
-.cta-ui{
-  @apply gap-3 flex flex-row justify-center items-center relative 
+.gh-button {
+  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[120px] gap-1 cursor-pointer text-black;
 }
 
-.cta-left{
-  @apply flex flex-col gap-3 justify-center items-center 
+.cta-ui {
+  @apply gap-3 flex flex-row justify-center items-center relative;
 }
 
-.cta-right{
-  @apply flex flex-col gap-5 justify-center items-center 
+.cta-left {
+  @apply flex flex-col gap-3 justify-center items-center;
 }
 
-.contact-form{
-  @apply flex flex-col gap-3  
+.cta-right {
+  @apply flex flex-col gap-5 justify-center items-center;
 }
 
-.message-input{
-  @apply px-6 py-6 border-2 border-white rounded-4xl h-[200px] md:w-[700px]  text-white  ;
+.contact-form {
+  @apply flex flex-col gap-3;
+}
+
+.message-input {
+  @apply px-6 py-6 border-2 border-white rounded-4xl h-[200px] md:w-[700px]  text-white;
   resize: none;
 }
-.email-input{
-  @apply px-4 py-2 border-2 border-white rounded-full w-[300px] md:w-[350px] text-white 
+.email-input {
+  @apply px-4 py-2 border-2 border-white rounded-full w-[300px] md:w-[350px] text-white;
 }
-.subject-input{
-  @apply px-4 py-2 border-2 border-white rounded-full w-[300px] md:w-[500px]  text-white
-}
-
-.form-buttons{
-  @apply self-end gap-2 flex flex-row justify-center items-center
+.subject-input {
+  @apply px-4 py-2 border-2 border-white rounded-full w-[300px] md:w-[500px]  text-white;
 }
 
-.back-button{
-  @apply   rounded-full text-black w-[80px] py-2 font-heading font-bold cursor-pointer  text-center bg-white
+.form-buttons {
+  @apply self-end gap-2 flex flex-row justify-center items-center;
 }
 
-.form-send-button{ 
-  @apply bg-white rounded-full text-black w-[80px] py-2 font-heading font-bold cursor-pointer  text-center 
+.back-button {
+  @apply rounded-full text-black w-[80px] py-2 font-heading font-bold cursor-pointer  text-center bg-white;
 }
 
-.form-label{
-  @apply text-white font-heading font-semibold pl-6
+.form-send-button {
+  @apply bg-white rounded-full text-black w-[80px] py-2 font-heading font-bold cursor-pointer  text-center;
 }
 
-
-.zod-error{
-  @apply text-sm font-heading text-red-400 font-medium
+.form-label {
+  @apply text-white font-heading font-semibold pl-6;
 }
 
-.contact-response{
-  @apply text-lg lg:text-3xl font-heading font-bold text-white md:w-[300px] xl:w-[400px] xl:text-5xl
+.zod-error {
+  @apply text-sm font-heading text-red-400 font-medium;
+}
+
+.contact-response {
+  @apply text-lg lg:text-3xl font-heading font-bold text-white md:w-[300px] xl:w-[400px] xl:text-5xl;
 }
