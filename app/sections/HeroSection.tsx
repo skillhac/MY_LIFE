@@ -121,7 +121,7 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-black/40 -z-5"></div>
         </div>
 
-        <div className="hero-content w-full h-full justify-center items-center flex flex-col translate-y-30 gap-6 pt-30 relative z-10">
+        <div className="hero-content w-full h-full justify-center items-center flex flex-col translate-y-30 gap-6 pt-10 md:pt-30 relative z-10">
           <p className="hero-caption text-4xl md:text-6xl xl:text-7xl -mt-56 w-[90%] max-w-[900px] self-center font-heading tracking-tighter font-extrabold text-white text-center leading-tight">
             Hi I&apos;m Syam Kumar
             <span className="block mt-2 text-[#00ff41]">World&apos;s</span>
@@ -134,7 +134,7 @@ export default function HeroSection() {
             </span>
           </div>
 
-          <p className="text-white/80 text-center max-w-[720px] mt-6 text-lg leading-relaxed">
+          <p className="text-white/80 text-center max-w-[720px] mt-0 md:mt-6 text-lg leading-relaxed">
             From 16 surgeries to setting a world record — support Syam Kumar in
             becoming the first person without a leg to skydive from 45,000 feet
             and fly as a wingsuit pilot.
@@ -151,7 +151,7 @@ export default function HeroSection() {
           </div>
 
           {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-12">
+          <div className="flex flex-col sm:flex-row gap-4 mt-0 md:mt-12 ">
             <Link href={"/world-championship"}>
               <button className="bg-[#00bf30] hover:bg-[#03ae2e] text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
                 FUND THE ₹3.6CR MISSION →
@@ -159,7 +159,7 @@ export default function HeroSection() {
             </Link>
 
             <Link href={"/donation"}>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-black font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-black  font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
                 Donation
               </button>
             </Link>
