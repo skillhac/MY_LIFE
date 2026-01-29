@@ -153,7 +153,7 @@ export default function HeroSection() {
 
           {/* Stats */}
           <div
-            className="hero-stats text-sm sm:text-base md:text-lg text-white/90 font-medium
+            className=" text-sm sm:text-base md:text-lg text-white/90 font-medium
         flex flex-wrap justify-center gap-x-2 gap-y-2 mt-4"
           >
             <span className="text-[#00ff41]">16 Surgeries</span>
