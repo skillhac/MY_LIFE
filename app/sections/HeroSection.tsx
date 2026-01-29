@@ -103,63 +103,86 @@ export default function HeroSection() {
   });
 
   return (
-    <div className="main-container h-dvh overflow-hidden relative w-dvw   ">
-      <section className="hero-section h-full relative w-full ">
+    <div className="main-container min-h-dvh overflow-hidden relative w-full">
+      <section className="hero-section min-h-dvh relative w-full">
         {/* Video Background */}
-        <div className="w-full h-dvh absolute -z-10">
+        <div className="absolute inset-0 -z-10">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="object-cover w-full h-full -z-10 absolute"
+            className="object-cover w-full h-full"
           >
             <source src="/skydive web.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/40 -z-5"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="hero-content w-full h-full justify-center items-center flex flex-col translate-y-30 gap-6 pt-10 md:pt-30 relative z-10">
-          <p className="hero-caption text-4xl md:text-6xl xl:text-7xl -mt-56 w-[90%] max-w-[900px] self-center font-heading tracking-tighter font-extrabold text-white text-center leading-tight">
+        {/* Hero Content */}
+        <div className="hero-content relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-10 min-h-dvh gap-5 md:gap-7">
+          {/* Heading */}
+          <p
+            className="hero-caption font-heading font-extrabold tracking-tighter text-white leading-tight
+        text-3xl sm:text-4xl md:text-6xl xl:text-7xl
+        max-w-[90%] sm:max-w-[700px] xl:max-w-[900px]"
+          >
             Hi I&apos;m Syam Kumar
             <span className="block mt-2 text-[#00ff41]">World&apos;s</span>
           </p>
 
-          {/* Typing Line */}
-          <div className="h-[2.2rem] md:h-[2.6rem] xl:h-[3rem] flex items-center justify-center">
-            <span className="typing-text text-2xl md:text-3xl xl:text-4xl font-heading font-semibold text-[#95e1a8] tracking-wide">
+          {/* Typing Text */}
+          <div className="h-[2rem] sm:h-[2.4rem] md:h-[2.8rem]">
+            <span
+              className="typing-text font-heading font-semibold tracking-wide
+          text-lg sm:text-xl md:text-3xl xl:text-4xl text-[#95e1a8]"
+            >
               Youngest Amputee
             </span>
           </div>
 
-          <p className="text-white/80 text-center max-w-[720px] mt-0 md:mt-6 text-lg leading-relaxed">
+          {/* Description */}
+          <p
+            className="text-white/80 max-w-[90%] sm:max-w-[600px] md:max-w-[720px]
+        text-base sm:text-lg leading-relaxed"
+          >
             From 16 surgeries to setting a world record — support Syam Kumar in
             becoming the first person without a leg to skydive from 45,000 feet
             and fly as a wingsuit pilot.
           </p>
-          {/* Hero Stats */}
-          <div className=" text-lg md:text-xl text-white/90 font-medium text-center mt-8">
-            <span className="text-[#00ff41]">16 Surgeries</span> |
-            <span className="text-[#FF6B6B] ml-2">100+ Solo Skydiving</span> |
-            <span className="text-[#FFD700] ml-2">
-              {" "}
-              42000ft Wingsuit Flying
-            </span>{" "}
-            |<span className="text-[#61DBFB] ml-2">Tom Cruise Cliff Jump</span>
+
+          {/* Stats */}
+          <div
+            className="hero-stats text-sm sm:text-base md:text-lg text-white/90 font-medium
+        flex flex-wrap justify-center gap-x-2 gap-y-2 mt-4"
+          >
+            <span className="text-[#00ff41]">16 Surgeries</span>
+            <span>|</span>
+            <span className="text-[#FF6B6B]">100+ Solo Skydiving</span>
+            <span>|</span>
+            <span className="text-[#FFD700]">42000ft Wingsuit Flying</span>
+            <span>|</span>
+            <span className="text-[#61DBFB]">Tom Cruise Cliff Jump</span>
           </div>
 
-          {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-0 md:mt-12 ">
-            <Link href={"/world-championship"}>
-              <button className="bg-[#00bf30] hover:bg-[#03ae2e] text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 md:mt-10">
+            <Link href="/world-championship">
+              <button
+                className="bg-[#00bf30] hover:bg-[#03ae2e] text-white font-bold
+            py-3 sm:py-4 px-6 sm:px-8 rounded-lg text-base sm:text-lg
+            transition-all duration-300 hover:scale-105"
+              >
                 FUND THE ₹3.6CR MISSION →
               </button>
             </Link>
 
-            <Link href={"/donation"}>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-black  font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+            <Link href="/donation">
+              <button
+                className="border-2 border-white text-white hover:bg-white hover:text-black
+            font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg text-base sm:text-lg
+            transition-all duration-300 hover:scale-105"
+              >
                 Donation
               </button>
             </Link>
