@@ -173,7 +173,7 @@ text {
 }
 
 .timeline-text {
-  @apply font-heading text-white invisible text-[7px] md:text-[10px] lg:text-xs w-[100px] md:w-[200px] lg:w-[280px];
+  @apply font-heading text-white invisible text-[7px] md:text-[10px] lg:text-xs w-[120px] md:w-[200px] lg:w-[280px];
 }
 
 .timeline-pic {

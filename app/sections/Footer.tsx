@@ -1,14 +1,14 @@
-import React from "react";
-import TechStack from "../components/TechStack";
-import Contact from "../components/contact";
+// import React from "react";
+// import TechStack from "../components/TechStack";
+// import Contact from "../components/Contact";
 
-const Footer = () => {
-  return (
-    <div className="footer">
-      <TechStack />
-      {/* <Contact /> */}
-    </div>
-  );
-};
+// const Footer = () => {
+//   return (
+//     <div className="footer">
+//       {/* <TechStack /> */}
+//       <Contact />
+//     </div>
+//   );
+// };
 
-export default Footer;
+// export default Footer;

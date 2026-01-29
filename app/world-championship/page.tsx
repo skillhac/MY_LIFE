@@ -7,15 +7,6 @@ import { useState } from "react";
 /* ---------------- COMPONENT ---------------- */
 
 export default function DonationDetails() {
-  const details = {
-    accountName: "Syam Kumar S.S",
-    accountNumber: "67172487056",
-    ifsc: "SBIN0070040",
-    branchCode: "70040",
-    bank: "SBI kattakada",
-    upiId: "skss2000r@okhdfcbank",
-  };
-
   const [toast, setToast] = useState<string | null>(null);
   const [showProofs, setShowProofs] = useState(false);
 
@@ -60,19 +51,14 @@ export default function DonationDetails() {
       <h3 className="text-lg font-semibold mb-4">Proof Documents</h3>
 
       <DocRow
-        title="Weight less Artificial leg for better mobility : 55  lakhs"
-        onDownload={() =>
-          downloadFile("/documents/MR SYAM KUMAR.pdf", "MR SYAM KUMAR.pdf")
-        }
+        title="World Championship Invester Pitch "
+        onDownload={() => downloadFile("/documents/proof.docx", "proof.docx")}
       />
 
       <DocRow
-        title="Proof of Medical"
+        title="Proof of Document"
         onDownload={() =>
-          downloadFile(
-            "/documents/Discharge summary of kidney transplant surgery .pdf",
-            "Discharge summary of kidney transplant surgery .pdf",
-          )
+          downloadFile("/documents/prooof of Doc.pdf", "prooof of Doc.pdf")
         }
       />
 
@@ -101,8 +87,6 @@ export default function DonationDetails() {
         <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* LEFT */}
           <div className="space-y-6">
-            <MedicalExpenses />
-
             <div className="hidden lg:block">
               <ProofDocuments />
             </div>
@@ -121,36 +105,6 @@ export default function DonationDetails() {
                   <ProofDocuments />
                 </div>
               )}
-            </div>
-          </div>
-
-          {/* RIGHT */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-6">
-            <h2 className="text-2xl font-bold text-center">
-              Bank & UPI Details
-            </h2>
-
-            <Row label="Account Name" value={details.accountName} />
-            <Row label="Account Number" value={details.accountNumber} />
-            <Row label="IFSC" value={details.ifsc} />
-            <Row label="Branch Code" value={details.branchCode} />
-            <Row label="Bank" value={details.bank} />
-
-            <div
-              onClick={() => copyToClipboard("UPI ID", details.upiId)}
-              className="flex justify-between bg-black/40 px-4 py-3 rounded-xl cursor-pointer"
-            >
-              {details.upiId}
-              <Copy className="text-[#00ff41]" />
-            </div>
-
-            <div className="flex justify-center">
-              <Image
-                src="/GooglePay_QR.png"
-                alt="UPI QR"
-                width={180}
-                height={180}
-              />
             </div>
           </div>
         </div>
@@ -178,41 +132,5 @@ const DocRow = ({
       <Download size={14} />
       Download
     </button>
-  </div>
-);
-
-const MedicalExpenses = () => (
-  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl">
-    <h2 className="text-xl font-bold mb-4">Medical Expenses (30 Days)</h2>
-
-    <ul className="space-y-2 text-sm text-white/80">
-      <li className="flex justify-between">
-        <span>Mycophenolate Mofetil 500mg</span>
-        <span>₹775 × 6</span>
-      </li>
-      <li className="flex justify-between">
-        <span>Tacrolimus 0.5mg</span>
-        <span>₹230 × 6</span>
-      </li>
-      <li className="flex justify-between">
-        <span>Tacrolimus 1.0mg</span>
-        <span>₹447 × 6</span>
-      </li>
-      <li className="flex justify-between">
-        <span>Tacrolimus 2.0mg</span>
-        <span>₹870 × 3</span>
-      </li>
-      <li className="flex justify-between">
-        <span>Catheters & Bags</span>
-        <span>₹21,000+</span>
-      </li>
-    </ul>
-
-    <div className="h-px bg-white/10 my-3" />
-
-    <div className="flex justify-between font-semibold">
-      <span>Total</span>
-      <span className="text-[#00ff41]">₹35,352</span>
-    </div>
   </div>
 );

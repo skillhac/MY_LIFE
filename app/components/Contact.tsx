@@ -79,6 +79,14 @@ export default function Contact() {
               <Youtube size={18} />
               YouTube
             </a>
+            <a
+              href="http://wa.me/+917907424988"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm hover:text-[#00ff41] transition"
+            >
+              Whatsapp
+            </a>
           </div>
         </div>
       </div>

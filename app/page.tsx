@@ -22,6 +22,7 @@ import TestimonialsIntro from "./components/TestimonialsIntro";
 import Testimonials from "./sections/Testimonials";
 import TimelineIntro from "./components/TimelineIntro";
 import BioSection from "./sections/Bio";
+import Contact from "./components/Contact";
 // import BioIntro from "./components/BioIntro";
 
 gsap.registerPlugin(
@@ -51,13 +52,14 @@ export default function Home() {
         <TrailerSection />
         <ProjectsSection />
         <BingeableShowcase />
-        <TimelineIntro />
+        {/* <TimelineIntro /> */}
         <TimelineSection />
         <TestimonialsIntro />
         {/* <Testimonials /> */}
         {/* <BioIntro /> */}
         <BioSection />
         <TechStack />
+        <Contact />
       </div>
     </div>
   );
