@@ -49,7 +49,7 @@ export default function PressLinks() {
     <div className="bingeable-element w-dvw h-full px-10 flex flex-col justify-center items-center text-sand">
       {/* Title */}
       <h2 className="text-customBlue font-bold font-heading tracking-[0.3em] uppercase mb-12">
-        PRESS & MEDIA
+        Articles
       </h2>
 
       {/* Cards */}

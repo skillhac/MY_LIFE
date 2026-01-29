@@ -10,6 +10,7 @@ import LogoScroll from "./LogoScroll";
 import { frontEndIcons, backendIcons } from "../lib/techStackLogos";
 import { useMediaQuery } from "react-responsive";
 import PressLinks from "./PressLinks";
+import Link from "next/link";
 
 const BingeableShowcase = () => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -765,11 +766,11 @@ const BingeableShowcase = () => {
         <div className="bingeable-element  h-full w-dvw flex flex-row items-center justify-center  overflow-hidden">
           <div className="slide-1 gap-20 flex flex-col lg:flex-row justify-center items-center  ">
             <Image
-              src="/bingeable-main-4.png"
+              src="/handstand.jpg"
               width={1100}
               height={1400}
               alt="app-screenshots"
-              className={`image-1  lg:w-[60%] `}
+              className={`image-1  lg:w-[60%] object-cover mr-10`}
               style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
             />
 
@@ -777,28 +778,21 @@ const BingeableShowcase = () => {
               <div className="slide-1-text flex flex-col  justify-center items-center gap-5  opacity-0 translate-y-50 ">
                 <div className="flex flex-row justify-center items-center w-full  ">
                   <Image
-                    src="/bingeable-logo.png"
+                    src="/picture of syam1.jpg"
                     width={80}
                     height={80}
                     alt="bingeable-icon"
-                    className=""
+                    className="ml-10 rounded-2xl    "
                   />
                   <h3 className=" font-extrabold text-3xl  lg:text-4xl xl:text-5xl text-sand font-bingeable ">
-                    SYAMKUMARSS
+                    Skillhac
                   </h3>
                 </div>
                 <h3 className="text-lg lg:text-xl  xl:text-2xl  font-bold text-sand font-bingeable ">
                   A social media for film lovers and filmmakers.
                 </h3>
-                <Image
-                  src="/ios-store-1.png"
-                  width={160}
-                  height={120}
-                  alt="ios-store-icon"
-                  className="-translate-y-15"
-                />
               </div>
-              <div className="flex flex-row gap-6 lg:gap-4 xl:gap-14 -translate-y-12 text-sand  ">
+              {/* <div className="flex flex-row gap-6 lg:gap-4 xl:gap-14 -translate-y-12 text-sand  ">
                 <div className="count-up flex flex-row gap-3 opacity-0 justify-center items-center">
                   <Download size={26} />
                   <div className="flex flex-col text-sm font-medium text-center">
@@ -835,7 +829,7 @@ const BingeableShowcase = () => {
                     avg rating/5
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -1071,7 +1065,7 @@ const BingeableShowcase = () => {
                 className="challenges-title text-customBlue font-bold font-heading tracking-[0.3em] uppercase"
                 style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
               >
-                MISSIONS
+                Mission Impossible 01
               </h2>
               {/* <p className="challenges-para font-heading w-full lg:w-[1000px] font-bold text-2xl pt-2 text-sand text-left px-8 lg:px-0 ">
                 Here were some of my biggest challenges and takeaways from
@@ -1084,7 +1078,7 @@ const BingeableShowcase = () => {
                 className="challenge-problem "
                 style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
               >
-                MISSION NO 1 :
+                Wingsuit Flying at 42000ft
               </h3>
               <p
                 id="challenge-solution-1"
@@ -1148,7 +1142,7 @@ const BingeableShowcase = () => {
         </div>
         <div className="challenges-2 w-dvw px-8 h-full ">
           <h2 className="challenges-title text-customBlue font-bold font-heading tracking-[0.3em] uppercase pt-10 w-full hidden lg:flex ">
-            MISSIONs
+            Mission Impossible 02
           </h2>
           <div className="challenges-2 relative justify-center items-center  lg:pt-20">
             <h3
@@ -1156,7 +1150,7 @@ const BingeableShowcase = () => {
               className="challenge-problem "
               style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
             >
-              MISSION NO 2 :
+              Tom cruise cliff jump for Documentry
             </h3>
             <p
               id="challenge-solution-2"
@@ -1258,15 +1252,19 @@ const BingeableShowcase = () => {
           // </div> */}
           <PressLinks />
         </div>
-
+        <Link href={"/videos"}>
+          <button className="text-lg underline cursor-pointer font-semibold px-5 py-2 text-[#00ff41] transition">
+            See more →
+          </button>
+        </Link>
         <div className="bingeable-element bingeable-final justify-center items-center  relative w-dvw  ">
           <div className="flex flex-col justify-center items-center w-full h-full relative">
             <Image
-              src="/bingeable-logo.png"
-              width={100}
+              src="/running.jpg"
+              width={400}
               height={100}
               alt="bingeable-icon"
-              className="bingeable-logo-final "
+              className="bingeable-logo-final  rounded-2xl"
             />
             <h3 className="bingeable-text font-extrabold text-3xl lg:text-5xl text-sand font-bingeable  ">
               SYAMKUMARSS
